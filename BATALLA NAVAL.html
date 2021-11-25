@@ -1,0 +1,174 @@
+<script>
+//JUEGO DE BATALLA NAVAL
+var datosdeljugador = [];
+var datosDelBarco = [];
+var datosDelBarco2 = [];
+var aciertostotales = 0;
+var aciertostotales2 = 0;
+
+//TableroBatalla();
+alert("BIEN VENIDO A BATALLA NAVAL");
+alert("RECUERDA QUE SOLO CUENTAS CON TRES BARCOS PIENSA BIEN DONDE LOS COLOCARAS");
+alert("CADA UNO DE TUS BARCOS DEVE HIR POSICIONADO EN UNA LETRA");
+TableroBatalla(); 
+barcos();
+barco2();
+function TableroBatalla(){
+    var horizontal  = ["A","B","C","D","E"];
+    var horizontal2 = ["F","G","H","I","J"];
+    var horizontal3 = ["K","L","M","N","O"];
+    var horizontal4 = ["P","Q","R","S","T"];
+    var horizontal5 = ["U","V","W","X","Y"];
+    console.log(horizontal);
+    console.log(horizontal2);
+    console.log(horizontal3);
+    console.log(horizontal4);
+    console.log(horizontal5);
+   
+    
+    
+}
+
+
+function barcos(i){
+var inicio = 0;
+for (var i = 1; i <=inicio; i++){
+    barcos(i);}
+    let barco1 = prompt("JUGADOR 1 INGRESA LA LETRA DONDE SE POSICIONARA TU BARCO NUMERO 1");
+    let barco2 = prompt("JUGADOR 1 INGRESA LA LETRA DONDE SE POSICIONARA TU BARCO NUMERO 2");
+    let barco3 = prompt("JUGADOR 1 INGRESA LA LETRA DONDE SE POSICIONARA TU BARCO NUMERO 3");
+    var datosdelbarco = {
+        barco1: barco1,
+        barco2: barco2,
+        barco3: barco3,
+    
+    }
+    datosDelBarco.push(datosdelbarco); // DATOS DEL TERRENO
+
+}
+function barco2(i){
+var inicio = 0;
+for (var i = 1; i <=inicio; i++){
+    barco2(i);
+}
+
+    let barco1 = prompt("JUGADOR 2 INGRESA LA LETRA DONDE SE POSICIONARA TU BARCO NUMERO 1");
+    let barco2 = prompt("JUGADOR 2 INGRESA LA LETRA DONDE SE POSICIONARA TU BARCO NUMERO 2");
+    let barco3 = prompt("JUGADOR 2 INGRESA LA LETRA DONDE SE POSICIONARA TU BARCO NUMERO 3");
+    var datosdelbarco = {
+        barco1: barco1,
+        barco2: barco2,
+        barco3: barco3,
+    
+    }
+    datosDelBarco2.push(datosdelbarco); // DATOS DEL TERRENO
+
+}
+//cordenadas();
+//cordenadas2();
+var inicio2 = prompt("DESEAS INICIAR EL JUEGO");
+if (inicio2 == "si"){
+cordenadas();
+}
+switch (inicio2) {
+    case "si":
+        cordenadas();
+        
+        break;
+
+    case "no":
+        alert("GRACIAS POR JUGAR")
+        break;
+}
+function cordenadas(){
+    //var cordenada1 = prompt("INGRESA LA CORDENADA DONDE SE DIRIGIRA EL ATAQUE");
+    var barco = "";
+          for(let i = 1; i < datosDelBarco.length; i++){
+            barco = datosDelBarco[i].datosdelbarco+"\n";
+          }
+          var barco = prompt("JUGADOR 2 INGRESA LA CORDENADA DONDE SE DIRIGIRA EL ATAQUE");
+                    for(let i = 0; i < datosDelBarco.length; i++){
+                        if(datosDelBarco[i].barco1 == barco){
+                            alert("ACERTADO! MUY BIEN ECHO CAPITAN"); 
+                            aciertostotales++;
+                        }
+                    }
+                    for(let i = 0; i < datosDelBarco.length; i++){
+                        if(datosDelBarco[i].barco2 == barco){
+                            alert("ACERTADO! MUY BIEN ECHO CAPITAN");  
+                            aciertostotales++;
+                        }
+                    }
+                    for(let i = 0; i < datosDelBarco.length; i++){
+                        if(datosDelBarco[i].barco3 == barco){
+                            alert("ACERTADO! MUY BIEN ECHO CAPITAN");  
+                            aciertostotales++;
+                        }
+                    }
+                    if(aciertostotales == 3){
+                        alert("SE ACABO LA BATALLA HAS GANADO JUGADOR 2");
+                    }
+                    var barco = "";
+          for(let i = 0; i < datosDelBarco2.length; i++){
+            barco = datosDelBarco2[i].datosdelbarco+"\n";
+          }
+          //barcos 2
+          var barcos = prompt("JUGADOR 1 INGRESA LA CORDENADA DONDE SE DIRIGIRA EL ATAQUE");
+                    for(let i = 0; i < datosDelBarco2.length; i++){
+                        if(datosDelBarco2[i].barco1 == barcos){
+                            alert("ACERTADO! MUY BIEN ECHO CAPITAN"); 
+                             aciertostotales2++;
+                        }
+                    }
+                    for(let i = 0; i < datosDelBarco.length; i++){
+                        if(datosDelBarco2[i].barco2 == barcos){
+                            alert("ACERTADO! MUY BIEN ECHO CAPITAN"); 
+                             aciertostotales2++;; 
+                        }
+                    }
+                    for(let i = 0; i < datosDelBarco.length; i++){
+                        if(datosDelBarco2[i].barco3 == barcos){
+                            alert("ACERTADO! MUY BIEN ECHO CAPITAN"); 
+
+                        }
+                    }
+                    if(aciertostotales2 == 3){
+                        alert("SE ACABO LA BATALLA HAS GANADO JUGADOR 1");
+  
+                    }
+                      var inicio2 = prompt("DESEAS INICIAR EL JUEGO");
+                    switch (inicio2) {
+                        case "si":
+                            cordenadas();
+                            
+                            break;
+    
+                        case "no":
+                            alert("GRACIAS POR JUGAR")
+                            break;
+                    }
+                   
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
